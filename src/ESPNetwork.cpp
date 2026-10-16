@@ -493,6 +493,7 @@ bool ESPNetwork::connectWiFi(const uint8_t *bssid, const int32_t channel) {
       // If the user has the hidden flag set just connect to whatever the AP gives us.
       WiFi.begin(settings.WIFI.ssid, settings.WIFI.passphrase);
   }
+  WiFi.setTxPower(WIFI_POWER_8_5dBm);
   this->connectStart = millis();
   return true;
 }
@@ -568,6 +569,7 @@ bool ESPNetwork::openSoftAP() {
   this->openingSoftAP = true;
   ESP_LOGI(TAG, "Turning the HotSpot On");
   esp_task_wdt_reset(); // Make sure we do not reboot here.
+  WiFi.setTxPower(WIFI_POWER_8_5dBm);
   WiFi.softAP(strlen(settings.hostname) > 0 ? settings.hostname : "ESPSomfy RTS", "");
   delay(200);
   return true;
