@@ -1,3 +1,5 @@
+## ANOTHER FORK, added 'WiFi.setTxPower(WIFI_POWER_8_5dBm);' to make it work on some ESP32-C3 SuperMini that wouldn't broadcast SSID or connect to WiFi.
+
 ## This is a fork which was created  because the original repo seems to be bandoned and I was annoyed by constant restarts of my ESPSomfy. I've fixed some of the major issues caused by watchdog restarts. There are also compiled binaries in my fork if someone is experiencing same issues
 
   * Fixed a lot of bugs causing constant restarts by migrating to AsyncWebServer and AsyncSockets
